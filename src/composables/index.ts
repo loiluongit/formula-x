@@ -1,3 +1,5 @@
+import { FormulaParam, Param } from "../types";
+
 export function isOperator(char: string): boolean {
 	return char === "+" || char === "-" || char === "*" || char === "/";
 }
@@ -170,9 +172,12 @@ function flattenObject(obj: Record<string, any>): Record<string, any> {
 	return result
 }
 
-export function typecast(value: string | number) {
+export function typecast(value: FormulaParam) {
 	if (!isNaN(value as number)) {
 		return Number(value)
+	}
+	if (value === "true" || value === "false") {
+		return value === "true"
 	}
 	if (typeof value === "string") {
 		return `'${value}'`
@@ -183,13 +188,19 @@ export function typecast(value: string | number) {
 export function resolvePostfix(formulaString: string, context: Record<string, any>, formulas: any) {
 	// try {
 		const postfix = infixToPostfix(formulaString, formulas)
-		const stack: string[] = []
+		const stack: FormulaParam[] = []
 		const flattenedContext = flattenObject(context)
 		while (postfix.length > 0) {
 			const element = postfix.shift()
 			if (isOperator(element!) || isComparisonOperator(element!)) {
 				const value2 = typecast(stack.pop()!)
 				const value1 = typecast(stack.pop()!)
+
+				// TODO Define operator handlers, avoid to use eval
+				if (element === "=") {
+					stack.push(value1 === value2)
+					continue
+				}
 				const evalString = `${value1} ${element} ${value2}`
 				const rs = eval(evalString)
 				stack.push(rs)

@@ -10,6 +10,7 @@ const result: Ref<string|undefined> = ref('')
 const formulaStringX = ref('')
 const autocomplete = ref(false)
 
+// TODO allow to Ctrl + Z to undo
 const formulaElements:Ref<string[]> = ref([])
 
 const options = computed(() => {
@@ -48,8 +49,6 @@ function onSelectOption(option: { name: string, value: string }) {
   formulaElements.value.push(option.value)
   nextEl.value = ''
 }
-
-
 
 function resolve(){
   if (autocomplete.value) {

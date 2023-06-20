@@ -1,3 +1,6 @@
+// POC for formula engine
+// Outdated compared with functions in composables/index.js
+
 const formulas = {
 	IF: {
 		params: [

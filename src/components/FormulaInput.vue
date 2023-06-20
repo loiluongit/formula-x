@@ -53,6 +53,7 @@ const makeupFormulaElements = computed(() => {
 </script>
 
 <template>
+	<!-- TODO Allow to edit content and backward update to formula string  -->
 	<div v-for="el in makeupFormulaElements" class="flex flex-wrap px-1 rounded my-1" :class="el.classes" contenteditable="true">
 		{{ el.label }}
 	</div>

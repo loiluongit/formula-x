@@ -8,3 +8,5 @@ export type Param = {
 	description?: string
 	options?: string[]
 }
+
+// TODO Define mode details types

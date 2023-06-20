@@ -1,5 +1,9 @@
 import { FormulaParam, Param } from "./types";
 
+// TODO Add more formulas
+// - NOT
+// - GET_AGE
+// ...
 
 export const formulas = {
 	IF: {
@@ -16,20 +20,9 @@ export const formulas = {
 			}
 		}
 	},
-	AGE: {
-		params: [
-			{ description: "condition" },
-		],
-		handler: (condition: string, value1: FormulaParam, value2: FormulaParam) => {
-			if (condition) {
-				return value1;
-			} else {
-			return value2;
-			}
-		}
-	},
 }
 
+// TODO Support UI to define params
 export const params:Param[] = [
 	{
 		domain: "policy",
