@@ -16,7 +16,7 @@ export const formulas = {
 			if (condition) {
 				return value1;
 			} else {
-			return value2;
+				return value2;
 			}
 		}
 	},

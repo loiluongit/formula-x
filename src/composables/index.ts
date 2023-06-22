@@ -1,4 +1,4 @@
-import { FormulaParam, Param } from "../types";
+import { FormulaParam } from "../types";
 
 export function isOperator(char: string): boolean {
 	return char === "+" || char === "-" || char === "*" || char === "/";

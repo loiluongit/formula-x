@@ -58,10 +58,10 @@ function resolve(){
     }
     const formulaString = formulaElements.value.join('')
     console.log("---", formulaString)
-    result.value = resolvePostfix(formulaString, context, formulas)
-  } else {
+    result.value = resolvePostfix(formulaString, context, formulas) as string
+    } else {
     console.log("---", formulaStringX)
-    result.value = resolvePostfix(formulaStringX.value, context, formulas)
+    result.value = resolvePostfix(formulaStringX.value, context, formulas) as string
   }
 }
 </script>
