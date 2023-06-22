@@ -2,13 +2,13 @@
 
 Help to build and resolve the formula
 
-Preview link: formula-x.netlify.app
+Preview link: [formula-x.netlify.app](https://formula-x.netlify.app/)
 
 ## Formula Definitions
 This is some formulas and its resolver, it can be used in the formula
-When use the formula input with AutoComplete mode, these functions will be listed in the dropdown
+When using the formula input with AutoComplete mode, these functions will be listed in the dropdown
 
-The definition will contain list of needed `parameters` and `handler`
+The definition will contain a list of needed `parameters` and `handler`
 
 Sample Definition for IF:
 ```
@@ -31,15 +31,15 @@ Sample Definition for IF:
 }
 ```
 
-The the formula can be
+The formula can be
 ```
 IF ( 2 < 3, 100, 200)
 ```
-and result will be `100`
+and the result will be `100`
 
 ### Parameters
-To define the possible parameter can be select when build the formula
-The key will be store in the formula and the resolver will use that key to pick the value in the Context
+To define the possible parameter that can be selected when building the formula
+The key will be stored in the formula and the resolver will use that key to pick the value in the Context
 
 Example:
 ```
@@ -51,12 +51,12 @@ Example:
       label: "Policy Start Date",
       description: "Start date of policy"
    },
-   // new parameters can be added
+   //New parameters can be added
 ]
 ```
 
 ### Context
-This is an data object, that includes some data fields as Parameter mention
+This is a data object, that includes some data fields as Parameter mention
 
 ```
 {
@@ -70,7 +70,7 @@ This is an data object, that includes some data fields as Parameter mention
    }
 }
 ```
-the key in the parameter policy.startDate have the according value in the Context object `policy.startDate = "2020-01-01"`
+the key in the parameter policy.startDate has the according value in the Context object `policy.startDate = "2020-01-01"`
 
 
 # Dev
